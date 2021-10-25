@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PhoneForm from './components/PhoneForm'
 
 class App extends Component{
-  id = 2;
+  id = 3;
   state = {
     information: [
       {
@@ -14,6 +14,11 @@ class App extends Component{
         id:1,
         name:'김철수',
         phone:'010-1234-3333'
+      },
+      {
+        id:2,
+        name:'김영희',
+        phone:'010-1234-4444'
       }
     ]
   }
