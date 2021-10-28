@@ -19,15 +19,10 @@ https://velopert.com/3613
 ~~git 푸시할 때는 기본적으로 CRLF가 기본인 듯 싶다.~~ OS와도 관계가 있는 것으로 아는데 자세히 찾아보지는 않았다.
 확인해보자.
 
- - 텍스트 파일에서 줄바꿈을 표시하는데 사용
- - CR = Carriage Return
- 커서를 줄의 시작 부분으로 이동
- - LF = Line Feed
- 커서를 다음 줄로 이동
- Unix 기반 시스템에서 줄 바꿈 문자로 사용
- - CRLF = CR + LF
- Windows, Symbian OS에서 줄 바꿈 문자로 사용
- 참고 : https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
+ - 텍스트 파일에서 줄바꿈을 표시하는데 사용.
+ - CR (Carriage Return) : 커서를 줄의 시작 부분으로 이동.
+ - LF (Line Feed) : 커서를 다음 줄로 이동. Unix 기반 시스템에서 줄 바꿈 문자로 사용.
+ - CRLF (CR + LF) : Windows, Symbian OS에서 줄 바꿈 문자로 사용. 참고 : https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
 
 2. Component 끼리 데이터를 주고 받는 부분은 이해가 되었으나, Cache 나 Localstorage 와 같이 데이터를 계속 유지하는 방법에 대해 알아봐야한다.
 기본적으로는 redux가 있는데 다양한 라이브러리가 존재하는 듯.
