@@ -2,7 +2,7 @@
 
 전화번호 목록 만들기
 
-https://velopert.com/3613 
+참고 : https://velopert.com/3613 
 
 # 진행 일정
  10월 3주차 : 블로그 강의를 통한 학습 및 GIT 커밋 테스트
