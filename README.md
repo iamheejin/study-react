@@ -31,6 +31,8 @@ https://velopert.com/3613
 
 2. Component 끼리 데이터를 주고 받는 부분은 이해가 되었으나, Cache 나 Localstorage 와 같이 데이터를 계속 유지하는 방법에 대해 알아봐야한다.
 기본적으로는 redux가 있는데 다양한 라이브러리가 존재하는 듯.
+  - Localstorage는 useEffect() 훅 함수를 사용하여 활용할 수있다. 훅 함수는 무엇이지..
+  - redux는 state를 여러 Component에 전달, 전달 하면서 생기는 불필요한 data흐름을 해결하기 위한 방법이다. redux를 사용하면 하나의 store를 통해 모든 state를 관리할 수 있고, 원하는 Component로 데이터를 전달할 수 있다. 이 부분은 추후 다른 스터디 프로젝트로 연습을 할 예정
 
 # 느낀점
  1. react가 html + plain javascript 와는 다른 점은 데이터가 버려지지 않고 유지 된다는 점이다.
