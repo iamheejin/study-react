@@ -16,7 +16,7 @@
 
 # 알게된 점
  1. JSX ( Javascript + XML ) 언어를 사용한다.
- 2. 일반적으로 정적인 HTML DOM을 구성하는 것이 아닌 가상 DOM 을 가지고 있으며 데이터 변경시 가상 DOM으로 화면을 전환한다.
+ 2. 일반적으로 정적인 HTML DOM을 구성하는 것이 아닌 가상 DOM 을 가지고 있으며 데이터 변경시 가상 DOM으로 화면을 렌더링한다.
  3. 데이터 형식은 Component -> Component 로 전달하는 props, Component 내에서 관리하는 state로 구분된다.
  4. Component에는 lifecycle이라는 개념이 있으며 Component 내 변화시점(생성, 업데이트, 삭제..)을 캐치하여 관리할 수 있다.
  5. Component의 리 렌더링을 위해서는 데이터의 불변성을 지켜야한다. 배열의 데이터를 직접 수정하는 형태가 아닌 기존 배열 기반으로 새로운 배열로 만들어야 한다.
