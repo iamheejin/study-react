@@ -11,6 +11,12 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 ## 진행 일정
 
 ### 11월 1주차 : 블로그 강의 학습 및 실습 따라하기
+* 액션 타입, 액션 생성 함수, 리듀서 생성
+* createAction, handleAction
+* root reducer 에서 reducer 들 합치기
+* create store(module)
+* Provider로 리덕스 사용
+* redux 데이터 처리를 위한 별도 Component 생성 및 store 데이터 props 화
 
 ## 알게된 점
 1. redux 의 기본 용어
@@ -27,12 +33,13 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 	동일한 input에는 동일한 output이 나와야한다.
 	New date(), Math.random() 과같이 실행할 때마다 다른 결과가 나올수 있는 로직은 사용하면 안된다.
 (이런 로직은 리듀서 함수 바깥에서 처리 , 리덕스 미들웨어를 사용)
+3. 긴 소스를 간결하게 작성하는 방법이 있다. 스토어에서 createAction, handleAction 사용하고 Component에서 bindActionCreate 하여 action을 바로 불러오는 방법.
 
 
 ## 궁금한 점
 1. 새로 알게된 immutable.js 라이브러리, 리덕스 미들웨어 에 대해 알아보자.
 
 ## 느낀 점
-1. 리듀서를 선언하는 부분과 Component에서 스토어의 데이터를 호출하는 부분은 대강 이해가 되었지만, 그 과정까지 설정을 해야하는 부분이 꽤 있다. 좀 더 소스에 대한 이해가 필요하다.
+1. 리듀서를 선언하는 부분과 Component에서 스토어의 데이터를 호출하는 부분은 대강 이해가 되었지만, 그 과정까지 설정을 해야하는 부분이 꽤 있다. 좀 더 소스에 대한 이해가 필요하다. reducer 를 combine, store configure, Root에서 Provider 선언.. 등
 
 ## 다음에는
