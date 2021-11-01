@@ -11,12 +11,13 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 ## 진행 일정
 
 ### 11월 1주차 : 블로그 강의 학습 및 실습 따라하기
-* 액션 타입, 액션 생성 함수, 리듀서 생성
-* createAction, handleAction
-* root reducer 에서 reducer 들 합치기
-* create store(module)
-* Provider로 리덕스 사용
-* redux 데이터 처리를 위한 별도 Component 생성 및 store 데이터 props 화
+* counter 기능에 redux 추가하기
+    * 액션 타입, 액션 생성 함수, 리듀서 생성
+    * createAction, handleAction
+    * root reducer 에서 reducer 들 합치기
+    * create store(module)
+    * Provider로 리덕스 사용
+    * redux 데이터 처리를 위한 별도 Component 생성 및 store 데이터 props 화
 
 ## 알게된 점
 1. redux 의 기본 용어
