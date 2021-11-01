@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>HTML에서 사용해보는 일반적인 리덕스</title>
+</head>
+<body>
+  <h1 id="number">0</h1>
+  <button id="increment">+</button>
+  <button id="decrement">-</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js"></script>
+<script>
+  const elNumber = document.getElementById('number');
+  const btnIncrement = document.getElementById('increment');
+  const btnDecrement = document.getElementById('decrement');
+  const btnRender = document.getElementById('render');
+
+  // 액션 타입
+  const INCREMENT = 'INCREMENT';
+  const DECREMENT = 'DECREMENT';
+
+  // 액션 생성 함수
+  const increment = (diff) => ({ type: INCREMENT, diff: diff });
+  const decrement = (diff) => ({ type: DECREMENT, diff: diff });
+
+  // 초기값
+  const initialState = {
+    number: 0
+  }
+
+  // 리듀서 함수
+  const counter = ( state = initialState, action ) => {
+    console.log(JSON.stringify(state));
+    console.log(JSON.stringify(action));
+    switch(action.type){
+      case INCREMENT :
+        return {
+          number: state.number + action.diff
+        };
+      case DECREMENT :
+        return {
+          number: state.number - action.diff
+        };
+      default :
+        return state;
+    }
+  }
+
+  // 리듀서 함수를 파라미터로 스토어 생성
+  const { createStore } = Redux;
+  const store = createStore(counter);
+
+  const render = () => {
+    elNumber.innerText = store.getState().number;
+  }
+
+  // 스토어에 구독, 변화시 render 실행
+  store.subscribe(render);
+
+  // 버튼 이벤트
+  btnIncrement.addEventListener('click', () => {
+    store.dispatch(increment(5));
+  });
+
+  btnDecrement.addEventListener('click', () => {
+    store.dispatch(decrement(5));
+  });
+
+</script>
+</body>
+</html>
