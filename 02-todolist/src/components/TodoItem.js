@@ -9,7 +9,7 @@ class TodoItem extends Component {
     const { text, checked, id, onToggle, onRemove } = this.props;
     console.log('id:'+id);
     return(
-      <div className="todo-item" onClick={() => onToggle(id) }>
+      <div className="todo-item" id={`id${id}`} onClick={() => onToggle(id) }>
         <div className="remove" onClick={(e) => {
           e.stopPropagation();
           onRemove(id)}
