@@ -45,12 +45,15 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 
 
 ## 궁금한 점
-* 새로 알게된 immutable.js 라이브러리, 리덕스 미들웨어 에 대해 알아보자.
+* 새로 알게된 immutable.js 는 일반적인 react 프로젝트에서 자주 쓰는 라이브러리인가?
+* 예제를 통해 Map, List 데이터 형만 다뤄봤다. 다른 데이터 형은 없는지 궁금하다.
+* 생각보다 번거롭다.. 한 화면을 위해 필요한 파일들이 많다.. 1) store module 2) module combiner 3) configure(create store) 4) Privider 선언 5) Container Component 처음 생성시 생성되는 부분, 물론 추가적으로는 module과 container component 두 파일만 생성되겠지만 너무 번거롭잖아. 간단하게 작성할 방법은 없냐?
 
 ## 느낀 점
 * Counter 기능에 redux를 붙여보았는데 아직 어렵다. 생소한 단어와 개념들 때문인가.
-
 * 리듀서를 선언하는 부분과 Component에서 스토어의 데이터를 호출하는 부분은 대강 이해가 되었지만, 그 과정까지 설정을 해야하는 부분이 꽤 있다. 좀 더 소스에 대한 이해가 필요하다. reducer 를 combine, store configure, Root에서 Provider 선언.. 등
+* 생각보다 번거롭고, 생성할 파일도 많다. 그나마 createAction, handleAction, bindActionCreators 로 소스가 줄긴 했다. 나중에 화면이 많아질경우 소스가 복잡하겠다. 라는 생각도 든다. 
+* 각 기능들을 component 별로 나누어 작성할 수 있다는 점은 장점이나, 소스가 너무 많아지진 않을까 걱정이 든다.
 
 ## 다음에는
 * immutable.js 에 대해 예제 중심으로만 다뤄봤다. 따로 공부가 필요하다.
