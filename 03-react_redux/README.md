@@ -45,9 +45,12 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 
 
 ## 궁금한 점
-* 새로 알게된 immutable.js 는 일반적인 react 프로젝트에서 자주 쓰는 라이브러리인가?
-* 예제를 통해 Map, List 데이터 형만 다뤄봤다. 다른 데이터 형은 없는지 궁금하다.
-* 생각보다 번거롭다.. 한 화면을 위해 필요한 파일들이 많다.. 1) store module 2) module combiner 3) configure(create store) 4) Privider 선언 5) Container Component 처음 생성시 생성되는 부분, 물론 추가적으로는 module과 container component 두 파일만 생성되겠지만 너무 번거롭잖아. 간단하게 작성할 방법은 없냐?
+* 새로 알게된 immutable.js 는 일반적인 react 프로젝트에서 자주 쓰는 라이브러리인가? 편하긴 한데 많이 쓰지 않는다고 하면 plain javscript immutable 더 공부해야한다.   
+    -> 생활코딩에서도 immutable.js에 대한 내용은 없고, 블로그를 봐도 redux, immutable은 필수 라이브러리라고 하지는 않는다. plain javascript 에서 immutable을 유지할 수 있는 문법을 연습해야겠다..
+* 예제를 통해 Map, List 데이터 형만 다뤄봤다. 다른 데이터 형은 없는지 궁금하다.   
+    -> List, Map, Set, Stack, Record, Seq, Collection이 있다. 참고 ? https://immutable-js.com/docs/v4.0.0
+* 생각보다 번거롭다.. 한 화면을 위해 필요한 파일들이 많다.. 1) store module 2) module combiner 3) configure(create store) 4) Privider 선언 5) Container Component 처음 생성시 생성되는 부분, 물론 추가적으로는 module과 container component 두 파일만 생성되겠지만 너무 번거롭잖아. 간단하게 작성할 방법은 없나?   
+    -> 없는것같다.. 그나마 bindAction 같은걸로 줄이는듯하다.
 
 ## 느낀 점
 * Counter 기능에 redux를 붙여보았는데 아직 어렵다. 생소한 단어와 개념들 때문인가.
@@ -57,5 +60,6 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 
 ## 다음에는
 * immutable.js 에 대해 예제 중심으로만 다뤄봤다. 따로 공부가 필요하다.
+* plain javascript immutable 유지 문법을 다시 공부하자
 * 리덕스 미들웨어라는 용어에 대해 알아보자
 * 훅 함수에 대해 알아보자
