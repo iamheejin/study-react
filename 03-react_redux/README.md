@@ -56,7 +56,8 @@ $ git clone https://github.com/vlpt-playground/begin-redux.git
 * Counter 기능에 redux를 붙여보았는데 아직 어렵다. 생소한 단어와 개념들 때문인가.
 * 리듀서를 선언하는 부분과 Component에서 스토어의 데이터를 호출하는 부분은 대강 이해가 되었지만, 그 과정까지 설정을 해야하는 부분이 꽤 있다. 좀 더 소스에 대한 이해가 필요하다. reducer 를 combine, store configure, Root에서 Provider 선언.. 등
 * 생각보다 번거롭고, 생성할 파일도 많다. 그나마 createAction, handleAction, bindActionCreators 로 소스가 줄긴 했다. 나중에 화면이 많아질경우 소스가 복잡하겠다. 라는 생각도 든다. 
-* 각 기능들을 component 별로 나누어 작성할 수 있다는 점은 장점이나, 소스가 너무 많아지진 않을까 걱정이 든다.
+* 각 기능들을 component 별로 나누어 작성할 수 있다는 점은 장점이나, 소스가 너무 많아지진 않을까 걱정이 든다.    
+    -> naver d2 문서를 보니 이 샘플은 action, component, reducer, store 로 나눠져있는 구조다.. 더 복잡한건가.. 참고 : https://d2.naver.com/helloworld/1848131
 
 ## 다음에는
 * immutable.js 에 대해 예제 중심으로만 다뤄봤다. 따로 공부가 필요하다.
