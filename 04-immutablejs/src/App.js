@@ -1,43 +1,41 @@
 import React, { Component } from 'react';
 import UserList from './UserList';
+import {Map, List} from 'immutable';
 
 class App extends Component {
   id = 3;
 
   state = {
-    input: '',
-    users: [
-      {
-        id: 1,
-        username: 'hong'
-      },
-      {
-        id: 2,
-        username: 'kim'
-      }
-    ]
+    data: Map({
+      input: '',
+      users: List([
+        Map({id:1, username:'hone'}),
+        Map({id:2, username:'kim'})
+      ])
+    })
   }
 
   onChange = (e) => {
     const { value } = e.target;
+    const { data } = this.state;
+
     this.setState({
-      input: value
+      data: data.set('input', value)
     })
   }
 
   onButtonClick = (e) => {
-    this.setState( ({ users, input }) => ({
-      input: '',
-      users: users.concat({
-        id:this.id++,
-        username:input
-      })
-    }) )
+    const { data } = this.state;
+    this.setState({
+      data: data.set('input', '').update('users', users => users.push(Map({id: this.id++, username:data.get('input')})))
+    })
   }
 
   render(){
     const { onChange, onButtonClick } = this;
-    const { input, users } = this.state;
+    const { data } = this.state;
+    const input = data.get('input');
+    const users = data.get('users');
 
     return (
       <div>
