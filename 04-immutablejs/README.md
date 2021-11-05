@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 리액트 스터디 4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+immutable.js 학습
 
-## Available Scripts
+참고 : https://velopert.com/3486
 
-In the project directory, you can run:
+## 진행 일정
 
-### `yarn start`
+### 11월 1주차 : 블로그 강의 학습 및 실습 따라하기
+* immutable.js 에서 사용하는 데이터 형, 함수 학습
+* state를 Map, List로 구성
+* 하위 Component에 props를 전달할 때 immutable.js 함수를 이용
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 알게된 점
+* facebook 팀이 만든 라이브러리가 immutable.js이다.
+* plain JS immutable 구현이 번거롭고 복잡하기 때문에 개발된 라이브러리
+* immutable.js 클래스
+	* Map : key, value 형태의 객체
+	* List : 배열
+	* Stack : Stack 형태로 동작하지만 배열 동작 대부분 사용 가능
+	* Set : value, value 형태
+	* Range : 시작과 종료값을 받아 무한 배열을 제공
+	* Repeat : 값을 받아 무한 배열을 제공
+	* Record : plain JS 의 객체와 유사, 특정 문자열 키 집합을 적용
+* 함수
+  * get, getIn   
+    key 값을 받아 접근한다.
+    * map.get('key')
+    * map.getIn(['key1', 'key2')
+    * arr.get(0)
+    * arr.getIn([0, 'key'])
+  * set, setIn, update, updateIn   
+    값을 변경한다. 값이 같지 않으면 항상 새로운 Class를 반환한다. set은 값을, update는 함수를 받아 변경할 수 있다.
+    * const newMap = map.set('key', 5)
+    * const newMap = map.setIn(['key1', 'key2'], '2') key1 > key2 하위의 데이터를 변경한다.
+    * const newMap = map.update('key', value => value + 1)
+    * const newMap = map.updateIn(['key1', 'key2'], value => value + 1)
+  * List 함수
+    * const newArr = arr.push(Map({key:5})
+    * const newArr = arr.filter(item => item.get('key') === 1)
+  * delete   
+    삭제
+    * const newMap = map.delete('key')
+    * const newArr = arr.delete(0)
+  * merge, mergeDeep, mergeDeepWith   
+    class 합치기. merge는 자식 class는 합치지 않음, mergeDeep은 자식 class도 합침. mergeWith, mergeDeepWith 은 key 충돌시 반영할 값 지정.
+    * map1.merge(map2);
+    * map1.mergeDeep(map2)
+    * map1.mergeWith((prev, next) => prev / next, map2) 충돌나는 key 의 value는 나누기를 한다.
+  * Class 변환
+    * fromJS() : JS Array => List / JS Object => Map
+    * toJS() : Immutable.js 객체를 JS 객체로 변환
+참고 : https://immutable-js.com/docs/v4.0.0/Map/
+https://runebook.dev/ko/docs/immutable/-index-
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 궁금한 점
+* immutable.js를 사용하면 간단하게 불변성을 지키며 react 개발을 할수있다. 하지만 얼마나 실제 프로젝트에서 사용되는지 궁금하다. plain JS immutable 구현 방식도 연습이 필요하다.
 
-### `yarn test`
+## 느낀 점
+* 생각보다 편리하고 간단하다. 기존에 개발하던 plain JS 기준으로 불변성을 유지하면서 object를 컨트롤하기쉽다.
+* 하지만, plain JS로의 방법도 숙지가 필요하다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 다음에는
+* plain javascript immutable 유지 문법을 다시 공부하자
+* 리덕스 미들웨어라는 용어에 대해 알아보자
+* 훅 함수에 대해 알아보자
