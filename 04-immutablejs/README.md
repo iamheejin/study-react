@@ -33,20 +33,23 @@ immutable.js 학습
     값을 변경한다. 값이 같지 않으면 항상 새로운 Class를 반환한다. set은 값을, update는 함수를 받아 변경할 수 있다.
     * const newMap = map.set('key', 5)
     * const newMap = map.setIn(['key1', 'key2'], '2') key1 > key2 하위의 데이터를 변경한다.
-    * map.update('key', value => value + 1)
-    * map.updateIn(['key1', 'key2'], value => value + 1)
+    * const newMap = map.update('key', value => value + 1)
+    * const newMap = map.updateIn(['key1', 'key2'], value => value + 1)
   * List 함수
-    * arr.push(Map({key:5})
-    * arr.filter(item => item.get('key') === 1)
+    * const newArr = arr.push(Map({key:5})
+    * const newArr = arr.filter(item => item.get('key') === 1)
   * delete   
     삭제
-    * map.delete('key')
-    * arr.delete(0)
+    * const newMap = map.delete('key')
+    * const newArr = arr.delete(0)
   * merge, mergeDeep, mergeDeepWith   
     class 합치기. merge는 자식 class는 합치지 않음, mergeDeep은 자식 class도 합침. mergeWith, mergeDeepWith 은 key 충돌시 반영할 값 지정.
     * map1.merge(map2);
     * map1.mergeDeep(map2)
     * map1.mergeWith((prev, next) => prev / next, map2) 충돌나는 key 의 value는 나누기를 한다.
+  * Class 변환
+    * fromJS() : JS Array => List / JS Object => Map
+    * toJS() : Immutable.js 객체를 JS 객체로 변환
 참고 : https://immutable-js.com/docs/v4.0.0/Map/
 https://runebook.dev/ko/docs/immutable/-index-
 
