@@ -49,38 +49,15 @@ immutable.js 학습
     * map1.mergeWith((prev, next) => prev / next, map2) 충돌나는 key 의 value는 나누기를 한다.
 참고 : https://immutable-js.com/docs/v4.0.0/Map/
 https://runebook.dev/ko/docs/immutable/-index-
-* redux 의 규칙
-	* 하나의 애플리케이션 안에는 하나의 스토어가 존재
-	* 상태는 읽기전용. 불변성 유지. ( state는 setState로, array는 push (X) concat(O) )
-	불변성을 유지해야하는 이유는 데이터 변경 감지시 shallow equality 검사를 하기 때문.
-	직역하면 얕게 검사를 한다는것..
-	관련 라이브러리로 Immutable.js 라이브러리가 있다.
-		* Immutable.js 라이브러리는 react의 데이터 불편과 관련하여 간편하게 사용하고자 탄생한 라이브러리이다. Map, List, set, update, findIndex updateIn, deleteIn .. 등을 제공한다.
-	* 변화를 일으키는 함수 리듀서는 순수한 함수여야한다.
-	동일한 input에는 동일한 output이 나와야한다.
-	New date(), Math.random() 과같이 실행할 때마다 다른 결과가 나올수 있는 로직은 사용하면 안된다.
-(이런 로직은 리듀서 함수 바깥에서 처리 , 리덕스 미들웨어를 사용)
-
-* 긴 소스를 간결하게 작성하는 방법이 있다. 스토어에서 createAction, handleAction 사용하고 Component에서 bindActionCreate 하여 action을 바로 불러오는 방법.
-
 
 ## 궁금한 점
-* 새로 알게된 immutable.js 는 일반적인 react 프로젝트에서 자주 쓰는 라이브러리인가? 편하긴 한데 많이 쓰지 않는다고 하면 plain javscript immutable 더 공부해야한다.   
-    -> 생활코딩에서도 immutable.js에 대한 내용은 없고, 블로그를 봐도 redux, immutable은 필수 라이브러리라고 하지는 않는다. plain javascript 에서 immutable을 유지할 수 있는 문법을 연습해야겠다..
-* 예제를 통해 Map, List 데이터 형만 다뤄봤다. 다른 데이터 형은 없는지 궁금하다.   
-    -> List, Map, Set, Stack, Record, Seq, Collection이 있다. 참고 ? https://immutable-js.com/docs/v4.0.0
-* 생각보다 번거롭다.. 한 화면을 위해 필요한 파일들이 많다.. 1) store module 2) module combiner 3) configure(create store) 4) Privider 선언 5) Container Component 처음 생성시 생성되는 부분, 물론 추가적으로는 module과 container component 두 파일만 생성되겠지만 너무 번거롭잖아. 간단하게 작성할 방법은 없나?   
-    -> 없는것같다.. 그나마 bindAction 같은걸로 줄이는듯하다.
+* immutable.js를 사용하면 간단하게 불변성을 지키며 react 개발을 할수있다. 하지만 얼마나 실제 프로젝트에서 사용되는지 궁금하다. plain JS immutable 구현 방식도 연습이 필요하다.
 
 ## 느낀 점
-* Counter 기능에 redux를 붙여보았는데 아직 어렵다. 생소한 단어와 개념들 때문인가.
-* 리듀서를 선언하는 부분과 Component에서 스토어의 데이터를 호출하는 부분은 대강 이해가 되었지만, 그 과정까지 설정을 해야하는 부분이 꽤 있다. 좀 더 소스에 대한 이해가 필요하다. reducer 를 combine, store configure, Root에서 Provider 선언.. 등
-* 생각보다 번거롭고, 생성할 파일도 많다. 그나마 createAction, handleAction, bindActionCreators 로 소스가 줄긴 했다. 나중에 화면이 많아질경우 소스가 복잡하겠다. 라는 생각도 든다. 
-* 각 기능들을 component 별로 나누어 작성할 수 있다는 점은 장점이나, 소스가 너무 많아지진 않을까 걱정이 든다.    
-    -> naver d2 문서를 보니 이 샘플은 action, component, reducer, store 로 나눠져있는 구조다.. 더 복잡한건가.. 참고 : https://d2.naver.com/helloworld/1848131
+* 생각보다 편리하고 간단하다. 기존에 개발하던 plain JS 기준으로 불변성을 유지하면서 object를 컨트롤하기쉽다.
+* 하지만, plain JS로의 방법도 숙지가 필요하다.
 
 ## 다음에는
-* immutable.js 에 대해 예제 중심으로만 다뤄봤다. 따로 공부가 필요하다.
 * plain javascript immutable 유지 문법을 다시 공부하자
 * 리덕스 미들웨어라는 용어에 대해 알아보자
 * 훅 함수에 대해 알아보자
