@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class User extends Component {
+    
+    shouldComponentUpdate(nextProps, nextState){
+        return nextProps.users !== this.props.users;
+    }
+
     render(){
         const { user: {username}} = this.props;
         console.log('%s가 렌더링 되고있어요', username);
