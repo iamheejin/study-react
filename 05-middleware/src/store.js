@@ -14,7 +14,12 @@ import modules from './modules';
 import { createLogger } from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
 
+//import { createPromise } from 'redux-promise-middleware';
+//const customizedPromiseMiddleware = createPromise({promiseTypeSuffixes: ['LOADING', 'SUCCESS', 'FAILURE']})
+
+import penderMiddleware from 'redux-pender';
+
 const logger = createLogger();
-const store = createStore(modules, applyMiddleware(logger, ReduxThunk));
+const store = createStore(modules, applyMiddleware(logger, ReduxThunk, penderMiddleware()));
 
 export default store;
