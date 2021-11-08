@@ -9,7 +9,8 @@ middleware 학습
 ### 11월 1주차 : 블로그 강의 학습 및 실습 따라하기
 * middleware의 개념
 * middleware 사용해보기
-### 11월 2주차 : 소스 정리
+### 11월 2주차 : 블로그 강의 학습 및 실습 따라하기
+* axios, redux로 일반적인 웹 요청
 
 ## 알게된 점
 * middleware : action이 dispatch 되어 reducer에서 처리하기전에 사전에 작업할 내용을 설정. 액션과 리듀서 중간자.
