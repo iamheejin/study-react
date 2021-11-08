@@ -10,7 +10,7 @@ middleware 학습
 * middleware의 개념
 * middleware 사용해보기
 ### 11월 2주차 : 블로그 강의 학습 및 실습 따라하기
-* axios, redux로 일반적인 웹 요청
+* axios, redux-thunk 로 일반적인 웹 요청
 * redux-promise-middleware 라이브러리를 활용한 웹 요청
 * redux-pender 라이브러리를 활용한 웹 요청
 
