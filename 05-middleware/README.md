@@ -24,7 +24,9 @@ middleware 학습
 * redux-promise-middleware, redux-pender 라이브러리로 웹 요청 처리
 
 ## 궁금한 점
-* action -> reducer 때 로그를 보는 수준에서 middleware를 사용하였다. 별도 다른 기능으로 사용하는 방법이 있는지 알고싶다.
+* action -> reducer 때 로그를 보는 수준에서 middleware를 사용하였다. 별도 다른 기능으로 사용하는 방법이 있는지 알고싶다.   
+ => 추가 웹요청 학습으로 middleware로 웹요청을 할 수 있다.
+ 
 
 ## 느낀 점
 * middleware라는 개념은 이해가 되었다.
